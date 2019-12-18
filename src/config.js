@@ -1,4 +1,4 @@
 export default {
   //
-  API_ENDPOINT: 'http://localhost:8000'
+  API_ENDPOINT: `https://mighty-bastion-71187.herokuapp.com/`
 }
