@@ -2,7 +2,12 @@
   "version": 2,
   "alias": "mtdrews-noteful-app",
   "name": "noteful-app",
+  "env": {},
   "routes": [
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
     {
       "src": "^/static/(.*)",
       "dest": "/static/$1"
@@ -11,5 +16,6 @@
       "src": ".*",
       "dest": "/index.html"
     }
+   
   ]
 }
