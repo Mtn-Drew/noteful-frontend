@@ -8,8 +8,11 @@ export default class AddNote extends Component {
   static defaultProps = {
     history: {
       push: () => {}
-    }
+    },
+    isNameValid: true,
+    isContentValid: true
   }
+
   static contextType = ApiContext
 
   handleSubmit = (e) => {
@@ -50,12 +53,14 @@ export default class AddNote extends Component {
         <NotefulForm onSubmit={this.handleSubmit}>
           <div className="field">
             <label htmlFor="note-name-input">Name</label>
-            <input type="text" id="note-name-input" name="note-name" />
+            <input type="text" id="note-name-input" name="note-name" required />
           </div>
+
           <div className="field">
             <label htmlFor="note-content-input">Content</label>
-            <textarea id="note-content-input" name="note-content" />
+            <textarea id="note-content-input" name="note-content" required />
           </div>
+
           <div className="field">
             <label htmlFor="note-folder-select">Folder</label>
             <select id="note-folder-select" name="note-folder-id">
@@ -67,6 +72,7 @@ export default class AddNote extends Component {
               ))}
             </select>
           </div>
+
           <div className="buttons">
             <button type="submit">Add note</button>
           </div>
